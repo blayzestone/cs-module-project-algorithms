@@ -1,16 +1,86 @@
-'''
+"""
 Input: a List of integers
 Returns: a List of integers
-'''
+"""
+
+
 def product_of_all_other_numbers(arr):
-    # Your code here
+    result = []
 
-    pass
+    # loop over the length of the array
+    for i in range(len(arr)):
+
+        # create a copy of the array but remove the value at the index equal to the current loop iteration
+        arr_copy = [*arr]
+        arr_copy.pop(i)
+
+        # loop over array copy, adding up the product of the remaining values in it
+        product = 1
+        for value in arr_copy:
+            product *= value
+
+        # add the product to the result array
+        result.append(product)
+
+    return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Use the main function to test your implementation
     # arr = [1, 2, 3, 4, 5]
-    arr = [2, 6, 9, 8, 2, 2, 9, 10, 7, 4, 7, 1, 9, 5, 9, 1, 8, 1, 8, 6, 2, 6, 4, 8, 9, 5, 4, 9, 10, 3, 9, 1, 9, 2, 6, 8, 5, 5, 4, 7, 7, 5, 8, 1, 6, 5, 1, 7, 7, 8]
+    arr = [
+        2,
+        6,
+        9,
+        8,
+        2,
+        2,
+        9,
+        10,
+        7,
+        4,
+        7,
+        1,
+        9,
+        5,
+        9,
+        1,
+        8,
+        1,
+        8,
+        6,
+        2,
+        6,
+        4,
+        8,
+        9,
+        5,
+        4,
+        9,
+        10,
+        3,
+        9,
+        1,
+        9,
+        2,
+        6,
+        8,
+        5,
+        5,
+        4,
+        7,
+        7,
+        5,
+        8,
+        1,
+        6,
+        5,
+        1,
+        7,
+        7,
+        8,
+    ]
 
-    print(f"Output of product_of_all_other_numbers: {product_of_all_other_numbers(arr)}")
+    print(
+        f"Output of product_of_all_other_numbers: {product_of_all_other_numbers(arr)}"
+    )
